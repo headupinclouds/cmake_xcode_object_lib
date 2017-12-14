@@ -1,4 +1,4 @@
-|Travis|
+|Travis| <- We expect this to fail
 
 .. |Travis| image:: https://img.shields.io/travis/headupinclouds/cmake_xcode_object_lib/master.svg?style=flat-square&label=Linux%20OSX%20FAIL
    :target: https://travis-ci.org/headupinclouds/cmake_xcode_object_lib
