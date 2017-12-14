@@ -1,4 +1,10 @@
+.. image:: https://travis-ci.org/headupinclouds/cmake_xcode_object_lib.svg?branch=master
+    :target: https://travis-ci.org/headupinclouds/cmake_xcode_object_lib
+
 Minimal example to reproduce CMake Xcode generator OBJECT library limitations constructed from Matthew Wheeler's CMake post.
+
+See the failure build badge above for the Travis CI Xcode logs containing the problem.  The OS X Makefile jobs `libcxx` and the Linux (Ubuntu Trusty) `default` Makefile jobs run without issue.
+
 
 See: http://cmake.3232098.n2.nabble.com/OBJECT-Libraries-with-Xcode-Generator-td7593197.html
 
