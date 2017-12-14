@@ -31,3 +31,7 @@ Note that the OBJECT library won't work with both ``lib/x.c`` and ``lib/alt1/x.c
   clang: error: no such file or directory: '/Users/scratch/cmake_xcode_object_lib/_build2/lib/example.build/Debug/example.build/Objects-normal/x86_64/x.o'
 
   ** BUILD FAILED **
+
+
+.. image:: https://user-images.githubusercontent.com/554720/34009023-46098a04-e0d5-11e7-850f-e0ef11f9fced.jpg
+   :target: https://travis-ci.org/headupinclouds/cmake_xcode_object_lib
