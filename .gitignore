@@ -1,6 +1,13 @@
 # Prerequisites
 *.d
 
+_logs/*
+_frameworks/*
+_install/*
+_builds/*
+
+*~
+
 # Compiled Object files
 *.slo
 *.lo

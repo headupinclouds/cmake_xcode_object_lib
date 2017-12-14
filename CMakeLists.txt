@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.5) 
+project(example) 
+add_subdirectory(lib) 
+include_directories(lib) 
+add_executable(main main.c $<TARGET_OBJECTS:example>)
