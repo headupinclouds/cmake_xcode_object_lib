@@ -1,0 +1,25 @@
+Minimal example to reproduce CMake Xcode generator OBJECT library limitations constructed from Matthew Wheeler's CMake post.
+
+See: http://cmake.3232098.n2.nabble.com/OBJECT-Libraries-with-Xcode-Generator-td7593197.html
+
+Note that the OBJECT library won't work with both ``lib/x.c`` and ``lib/alt1/x.c`` or ``lib/alt2/x.c``
+:: 
+
+  cmake -H. -B_build1 -GXcode -DALT1=OFF -DALT2=OFF && cmake --build _build1
+
+::
+
+  Build all projects
+
+  ** BUILD SUCCEEDED **
+
+
+::
+
+  cmake -H. -B_build2 -GXcode -DALT1=OFF -DALT2=ON && cmake --build _build2
+  
+:: 
+
+  clang: error: no such file or directory: '/Users/scratch/cmake_xcode_object_lib/_build2/lib/example.build/Debug/example.build/Objects-normal/x86_64/x.o'
+
+  ** BUILD FAILED **
