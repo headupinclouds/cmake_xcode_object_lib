@@ -1,5 +1,7 @@
-.. image:: https://travis-ci.org/headupinclouds/cmake_xcode_object_lib.svg?branch=master
-    :target: https://travis-ci.org/headupinclouds/cmake_xcode_object_lib
+|Travis|
+
+.. |Travis| image:: https://img.shields.io/travis/headupinclouds/cmake_xcode_object_lib/master.svg?style=flat-square&label=Linux%20OSX%20FAIL
+   :target: https://travis-ci.org/headupinclouds/cmake_xcode_object_lib
 
 Minimal example to reproduce CMake Xcode generator OBJECT library limitations constructed from Matthew Wheeler's CMake post.
 
