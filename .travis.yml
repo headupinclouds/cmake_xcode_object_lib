@@ -1,3 +1,5 @@
+# source: https://raw.githubusercontent.com/ingenue/hunter/pkg.template/.travis.yml
+
 # OSX/Linux (https://github.com/travis-ci-tester/toolchain-table)
 
 # Workaround for https://github.com/travis-ci/travis-ci/issues/8363
@@ -19,26 +21,26 @@ addons:
 dist:
   - trusty
 
-
 matrix:
   include:
     # Linux {
     - os: linux
-      env: TOOLCHAIN=default CONFIG=Release ALT1=OFF ALT2=OFF
+      env: TOOLCHAIN=default CONFIG=Release ALT1=OFF RESOLVE_COLLISIONS=OFF
     - os: linux
-      env: TOOLCHAIN=default CONFIG=Release ALT1=ON ALT2=OFF
+      env: TOOLCHAIN=default CONFIG=Release ALT1=ON RESOLVE_COLLISIONS=OFF
     # }
 
     # OSX {
     - os: osx
-      env: TOOLCHAIN=xcode CONFIG=Release ALT1=OFF ALT2=OFF
+      env: TOOLCHAIN=xcode CONFIG=Release ALT1=OFF RESOLVE_COLLISIONS=OFF
     - os: osx
-      env: TOOLCHAIN=xcode CONFIG=Release ALT1=ON ALT2=OFF
+      env: TOOLCHAIN=xcode CONFIG=Release ALT1=ON RESOLVE_COLLISIONS=OFF
     - os: osx
-      env: TOOLCHAIN=libcxx CONFIG=Release ALT1=OFF ALT2=OFF
+      env: TOOLCHAIN=xcode CONFIG=Release ALT1=ON RESOLVE_COLLISIONS=ON
     - os: osx
-      env: TOOLCHAIN=libcxx CONFIG=Release ALT1=OFF ALT2=OFF
-
+      env: TOOLCHAIN=libcxx CONFIG=Release ALT1=OFF RESOLVE_COLLISIONS=OFF
+    - os: osx
+      env: TOOLCHAIN=libcxx CONFIG=Release ALT1=ON RESOLVE_COLLISIONS=OFF
     # }
 
 install:
@@ -70,4 +72,4 @@ install:
   - export PATH="`pwd`/_ci/cmake/bin:${PATH}"
 
 script:
-  - polly.py --toolchain ${TOOLCHAIN} --config ${CONFIG} --fwd ALT1=${ALT1} ALT2=${ATL2}
+  - polly.py --toolchain ${TOOLCHAIN} --config ${CONFIG} --fwd ALT1=${ALT1} ALT2=OFF RESOLVE_COLLISIONS=${RESOLVE_COLLISIONS}
